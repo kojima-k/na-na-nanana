@@ -11,6 +11,16 @@
 |
 */
 
+use Illuminate\Http\Request;
+
 Route::get('/', function () {
     return view('welcome');
+});
+
+Route::get('/test01', function () {
+    return view('test01',["aaa"=>"bbb"]);
+});
+
+Route::post('/send', function (Request $request) {
+    return $request->name."さんです";
 });
